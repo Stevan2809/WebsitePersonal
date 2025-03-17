@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajakan Tour</title>
+    <style>
+        body {
+            background-image: url('hal1.png'); /* Gantikan 'path/to/your-image.jpg' dengan path gambar Anda */
+            background-size: cover; /* Menyesuaikan gambar dengan ukuran layar */
+            background-position: center; /* Memusatkan gambar latar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Latar belakang semi-transparan untuk meningkatkan keterbacaan teks */
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%; /* Lebar default untuk layar besar */
+            max-width: 500px; /* Lebar maksimum */
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            width: 100%; /* Tombol memenuhi lebar kontainer pada layar kecil */
+            box-sizing: border-box;
+        }
+        #yesButton {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noButton {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+        @media (min-width: 600px) {
+            .button {
+                width: auto; /* Tombol kembali ke ukuran default pada layar lebih besar */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YOU ARE INVITED TO THE TOUR </h1>
+        <button id="yesButton" class="button" onclick="window.location.href='halaman_selanjutnya.html'">ACEEPT</button>
+        <button id="noButton" class="button">No</button>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.clientWidth);
+            const y = Math.random() * (window.innerHeight - noButton.clientHeight);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
